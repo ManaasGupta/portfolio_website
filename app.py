@@ -9,7 +9,7 @@ app = Flask(__name__,template_folder='templates')
 
 
 lh_host=os.getenv("LOCAL_HOST")
-lh_password=os.getenv("LOCAL_USER")
+lh_password=os.getenv("LOCAL_PASSWORD")
 lh_database=os.getenv("LOCAL_DATABASE")
 lh_port=os.getenv("LOCAL_PORT")
 lh_user=os.getenv("LOCAL_USER")
@@ -20,7 +20,7 @@ lh_engine=create_engine(connection_string,echo=True)
 
 def get_data(sql_string:str):
     lh_host=os.getenv("LOCAL_HOST")
-    lh_password=os.getenv("LOCAL_USER")
+    lh_password=os.getenv("LOCAL_PASSWORD")
     lh_database=os.getenv("LOCAL_DATABASE")
     lh_port=os.getenv("LOCAL_PORT")
     lh_user=os.getenv("LOCAL_USER")
@@ -80,7 +80,7 @@ def get_database():
         sql_query = request.form.get('query')
         if sql_query:
             lh_host=os.getenv("LOCAL_HOST")
-            lh_password=os.getenv("LOCAL_USER")
+            lh_password=os.getenv("LOCAL_PASSWORD")
             lh_database=os.getenv("LOCAL_DATABASE")
             lh_port=os.getenv("LOCAL_PORT")
             lh_user=os.getenv("LOCAL_USER")
