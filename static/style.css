@@ -94,7 +94,7 @@ span {
   transform: translateY(3px);
 }
 .frank {
-  font-family: cursive;
+  font-family:  Arial, Helvetica, sans-serif;
 }
 .about > p {
   font-size: 20px;

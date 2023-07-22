@@ -1,5 +1,5 @@
 h1 {
-  font-family: cursive;
+  font-family: Arial, Helvetica, sans-serif;
   color: whitesmoke;
   text-align: center;
   padding-top: 1em;
@@ -12,7 +12,7 @@ body {
   background-repeat: no-repeat;
   background-position: center center;
   color: whitesmoke;
-  font-family: cursive;
+  font-family: Arial, Helvetica, sans-serif;
   height: 100vh;
   display: flex;
   flex-wrap: wrap;
