@@ -65,7 +65,8 @@ def login():
         password=str(request.form['password'])
         with lh_engine.connect() as conn:
                 conn.execute(text("use query"))
-                login_deatils=conn.execute(text("SELECT * FROM admin"))
+                adminstring=os.getenv("ADMIN_STRING")
+                login_deatils=conn.execute(text(adminstring))
                 login_deatails_dict=login_deatils.mappings().all()
                 if (login_deatails_dict[0]['email']==email) and (login_deatails_dict[0]['password']==password):
                     return redirect(url_for('get_database'))

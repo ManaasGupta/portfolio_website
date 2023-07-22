@@ -15,7 +15,8 @@ def get_data(sql_string:str):
     password=str(input("Enter Password: "))
 
     with engine.connect() as connection:
-        login_deatils=connection.execute(text("SELECT * FROM admin"))
+        adminstring=os.getenv("ADMIN_STRING")
+        login_deatils=conn.execute(text(adminstring))
     login_deatails_dict=login_deatils.mappings().all()
     connection.close()
     if (login_deatails_dict[0]['email']==email) and (login_deatails_dict[0]['password']==password):
