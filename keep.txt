@@ -1,0 +1,17 @@
+    <table>
+        {% for row in data %}
+        <tr>
+                {% for key, value in row.items() %}
+                <td>{{ key }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+            {% for row in len(list) %}
+            <tr>
+                {% for i in row %}
+                <td>{{ i }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+
+    </table>

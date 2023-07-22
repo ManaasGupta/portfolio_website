@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <link rel="icon" href="static\logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <script>
+        function darkMode() {
+            var element = document.body;
+            element.classList.toggle("dark-mode");
+            var ele = document.querySelector(".container")
+            ele.classList.toggle(".text");
+            var elements = document.querySelectorAll(".icon");
+            elements.forEach(function (element) {
+                element.classList.toggle("icon-dark");
+            });
+        }
+    </script>
+</head>
+
+<body id="body">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+  // Previous JavaScript code (smooth scrolling) goes here
+
+  const backToTopBtn = document.getElementById("backToTopBtn");
+
+  // Show/hide the "Back to Top" button based on the user's scroll position
+  window.addEventListener("scroll", function() {
+    if (window.pageYOffset > 200) {
+      // If the user has scrolled down more than 300 pixels, show the button
+      backToTopBtn.style.display = "block";
+    } else {
+      // Otherwise, hide the button
+      backToTopBtn.style.display = "none";
+    }
+  });
+
+  // Scroll to the top of the page when the button is clicked
+  backToTopBtn.addEventListener("click", function() {
+    const startPosition = window.pageYOffset;
+    const distance = 0 - startPosition;
+    const duration = 10; // Adjust the duration (in milliseconds) as desired
+
+    const startTime = performance.now();
+
+    function animation(currentTime) {
+      const timeElapsed = currentTime - startTime;
+      const progress = Math.min(timeElapsed / duration, 1);
+      const easing = easeInOutCubic(progress);
+      window.scrollTo(0, startPosition + distance * easing);
+
+      if (timeElapsed < duration) {
+        requestAnimationFrame(animation);
+      }
+    }
+
+    // Easing function for smooth scrolling
+    function easeInOutCubic(t) {
+      return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+    }
+
+    requestAnimationFrame(animation);
+  });
+});
+    </script>
+    <button id="backToTopBtn" title="Back to Top"><img class="icon"
+        src="static\up_arrow.png" alt="GITHUB icon"></button>
+
+    <script src="script.js"></script>
+    <div class="mainContent">
+        <header class="frank bar" style="z-index: 100;">
+            <!-- <img src="static\logo.png" alt="LOGO" class="logo"> -->
+            <a class="header" href="#body"> Home </a>
+            <a class="header" href="#about"> About Me </a>
+            <a class="header" href="#contact"> Contact Me </a>
+            <input type="button" value="Dark Mode" onclick="darkMode()" class="header bt">
+        </header>
+        <main>
+            <div class="col1" id="main">
+                <a href="{{url_for('login')}}" title="ADMIN LOGIN"><img src="static\portfolio.png" alt="Portfolio Photo"
+                        class="col1"></a>
+            </div>
+            <div class="col2">
+                <h1 class="frank">Hi,👋🏼<br /> I am <span>Manas Gupta</span><br />
+                    <span class="text_span">HTML/CSS/Python/SQL</span><br />
+                    <a href="static/Manas_Resume.pdf" download target="_blank" class='button'><button
+                            class="resume">Download
+                            Resume</button></a>
+                    <a href="https://github.com/ManaasGupta" target="_blank" class='button'
+                        style="margin-left: 10px;"><button class="resume">Github</button></a>
+                    <a href="https://www.linkedin.com/in/manas-gupta-55878516a/" class='button' target="_blank"
+                        style="margin-left: 10px;"><button class="resume">LinkedIn</button></a>
+                </h1>
+            </div>
+        </main>
+    </div>
+    <div class="about lead" id="about" style="font-family: 'Times New Roman', Times, serif; margin:1em 5em;">
+        <h1 style="text-align: center;">About Me</h1>
+        <p>As a recent graduate with a Master's degree in Bioinformatics, I am excited to apply my knowledge and skills
+            in a professional setting, particularly in the realm of software development. With a strong foundation in
+            programming and data analysis, I possess proficiency in languages such as Python, R, and SQL. My experience
+            encompasses the utilization of cutting-edge technologies and software tools to accelerate drug discovery
+            research, providing me with a comprehensive understanding of software development in a bioinformatics
+            context.</p>
+        <p>An exemplary project that highlights my software development expertise is my involvement in a Drug Discovery
+            Platform as part of a Software-as-a-Service (SaaS) project. Leveraging my programming skills and ability to
+            analyze complex biological data, I played a pivotal role in developing predictive models and collaborating
+            with cross-functional teams to drive tangible results. This experience allowed me to demonstrate my
+            capability to work collaboratively, manage complex projects, and deliver impactful solutions.Furthermore, I
+            have successfully led teams in the development and implementation of bioinformatics solutions, which have
+            made significant contributions to groundbreaking research. My aptitude for coordinating tasks and ensuring
+            module progress has equipped me with project management skills necessary to successfully navigate complex
+            software development endeavors. By fostering a collaborative work environment and emphasizing attention to
+            detail, I have been able to guide teams towards successful outcomes.In addition to my programming and data
+            analysis expertise, I possess a deep understanding of machine learning algorithms commonly employed in
+            computational tools for protein structure prediction. Through my research, I have explored various
+            phytochemicals present in medicinal plants and conducted experiments on antibiotic-resistant bacteria to
+            evaluate their antimicrobial potential. These experiences have enhanced my understanding of the practical
+            applications of bioinformatics in real-world scenarios and further solidified my software development
+            skills.Furthermore, I have gained hands-on training in molecular techniques associated with recombinant DNA
+            technology, including protein extraction, media preparation, gel electrophoresis, ligation, and
+            transformation of E. coli. This comprehensive knowledge has broadened my understanding of the underlying
+            mechanisms in biological systems and fortified my ability to integrate experimental data with computational
+            analysis.My dedication to academic excellence is exemplified by my publication of a review article titled
+            "Understanding the Machinery of Mycobacteriophage to Control Infection of Mycobacterium tuberculosis H37Rv
+            Using Mycobacterium smegmatis." This publication showcases my ability to conduct in-depth research, analyze
+            complex scientific literature, and contribute to the scientific community. These research experiences have
+            honed my analytical thinking and problem-solving skills, which are invaluable assets in the realm of
+            software development.</p>
+        <p>As I embark on my professional journey, I am particularly interested in pursuing software positions that will
+            allow me to further develop my skills and gain hands-on experience in the software development field. I am
+            confident that my diverse experiences and comprehensive skill set make me well-suited for software
+            development roles within the bioinformatics domain. With a strong attention to detail, a passion for
+            problem-solving, and a commitment to continuous learning and growth, I am prepared to make meaningful
+            contributions to software development projects and drive innovation in the field.</p>
+    </div>
+    <div class="form h-100 contact-wrap p-5 contact frank" id="contact">
+        <h1 class="text-center">Let's Talk </h1>
+        <form class="mb-5" id="contactForm" name="contactForm" method="POST">
+            <div class="row">
+                <div class="col-md-6 form-group mb-3">
+                    <label for="name" class="col-form-label margin5px">Name <span class='red'>* </span> </label>
+                    <input type="text" class="form-control" name="name" id="name" placeholder="Your name" required>
+                </div>
+                <div class="col-md-6 form-group mb-3">
+                    <label for="email" class="col-form-label margin5px">Email <span class='red'>* </span> </label>
+                    <input required type="email" class="form-control" name="email" id="email" placeholder="Your email">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 form-group mb-3">
+                    <label for="subject" class="col-form-label margin5px">Subject <span class='red'>* </span> </label>
+                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Your subject"
+                        required>
+                </div>
+            </div>
+            <div class="row mb-5">
+                <div class="col-md-12 form-group mb-3">
+                    <label for="message" class="col-form-label margin5px">Message <span class='red'>* </span> </label>
+                    <textarea class="form-control" name="message" id="message" cols="30" rows="4"
+                        placeholder="Write your message" required></textarea>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-5 form-group text-center">
+                    <input type="submit" value="Send Message" class="submit">
+                </div>
+            </div>
+        </form>
+        <!-- END Contact Form -->
+    </div>
+    <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <div class="col-md-4 d-flex align-items-center">
+                <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+                    <svg class="bi" width="30" height="24">
+                        <use xlink:href="#bootstrap" />
+                    </svg>
+                </a>
+                <h5 class="mb-3 mb-md-0 ">&copy; 2023 Manas Gupta, Inc</h5>
+            </div>
+
+            <ul class="nav col-md-4 justify-content-lg-end list-unstyled d-flex">
+                <li class="ms-3"><a class="text-body-secondary" href="https://github.com/ManaasGupta"><img class="icon"
+                            src="static\github.png" alt="GITHUB icon"></a></li>
+                <li class="ms-3"><a class="text-body-secondary"
+                        href="https://www.linkedin.com/in/manas-gupta-55878516a/"><img class="icon"
+                            src="static\linkedIn.png" alt="LinkedIn icon"></a></li>
+                <li class="ms-3"><a class="text-body-secondary" href="mailto:manasgpt3@gmail.com"><img class="icon"
+                            src="static\email.png" alt="LinkedIn icon"></a></li>
+            </ul>
+        </footer>
+    </div>
+</body>
+
+</html>

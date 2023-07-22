@@ -1,0 +1,69 @@
+body {
+  background: url("login_poster.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.home:hover {
+  display: block;
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  margin: auto;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 1.2em;
+  background-color: black;
+  outline: 2px solid black;
+  border: 2px solid white;
+  border-radius: 1.2em;
+  font-weight: bold;
+  transform: scale(1.1);
+}
+.home {
+  background-color: rgba(248, 248, 255, 0.607);
+  border-radius: 1.2em;
+  font-weight: bold;
+  outline: 2px solid white;
+  border: 2px solid black;
+  color: black;
+  padding: 0.7em 1.4em;
+  text-decoration: none;
+  font-size: 18px;
+}
+.symbol{
+    font-size: 1.2em;
+    justify-content: center;
+    text-align: center;
+}
+.contact {
+  display: block;
+  gap: 4em;
+  margin: 5em 10em;
+  background-color: rgba(248, 248, 255, 0.607);
+  border-radius: 30px;
+}
+.margin5px {
+  margin-left: 5px;
+}
+.submit {
+  font-size: 20px;
+  border-radius: 10px;
+  background-color: rgba(248, 248, 255, 0.607);
+  color: rgb(48, 48, 48);
+  padding: 10px;
+  margin-top: 20px;
+  border: rgb(48, 48, 48) solid 2px;
+  box-shadow: 0 9px rgb(48, 48, 48);
+  opacity: 0.8;
+}
+.submit:hover {
+  color: black;
+  border: black solid 2px;
+  box-shadow: 0 9px black;
+  opacity: 1;
+}
+.submit:active {
+  box-shadow: 0 6px black;
+  transform: translateY(3px);
+}

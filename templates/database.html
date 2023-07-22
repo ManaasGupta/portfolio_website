@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataBasse Entries</title>
+    <link href="{{ url_for('static', filename='data.css') }}" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="static\logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <h1>Data from Table</h1>
+    <form id="sqlQuery" name="sqlQuery" method="POST">
+        <label for="query" class="col-form-label margin5px">SQL Query <span class='red'>* </span></label>
+        <input required type="text" class="form-control query" name="query" id="query"
+            placeholder="Enter Your SQL query">
+        <div class="bt">
+            <input type="submit" value="Run Query" class="submit">
+            <!-- <img src="static\logo.png" alt="LOGO" class="logo"> -->
+            <a href="{{url_for('entry_point')}}" class="home submit"><i class="fa fa-sign-out"></i><span
+                    class="symbol"></span>
+                <span style="padding-left: 3px;">Sign Out</span> </a>
+        </div>
+    </form>
+    <table> 
+        <tr>
+            {% for key in keys %}
+                <th>{{ key }}</th>
+            {% endfor %}
+        </tr>
+        {% for row in data %}
+            <tr>
+                {% for key in keys %}
+                    <td>{{ row[key] }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+
+    </table>
+</body>
+
+</html>
