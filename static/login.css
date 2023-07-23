@@ -18,7 +18,7 @@ body {
   border: 2px solid white;
   border-radius: 1.2em;
   font-weight: bold;
-  transform: scale(1.1);
+  transform: scale(1);
 }
 .home {
   background-color: rgba(248, 248, 255, 0.607);
