@@ -6,6 +6,7 @@ body > .mainContent{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+    background-attachment: fixed;
     height: 100vh;
 
 }
@@ -28,7 +29,7 @@ body > div > header {
   text-decoration: none;
   transition: 0.2s;
   padding: 0.7em 1.4em;
-  transition: 0.5s;
+  transition: 0.3s;
 }
 .header-scroll {
   background-color: #ffffffce;
