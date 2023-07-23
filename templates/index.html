@@ -28,52 +28,52 @@
 
 <body id="body">
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-  // Previous JavaScript code (smooth scrolling) goes here
+        document.addEventListener("DOMContentLoaded", function () {
+            // Previous JavaScript code (smooth scrolling) goes here
 
-  const backToTopBtn = document.getElementById("backToTopBtn");
+            const backToTopBtn = document.getElementById("backToTopBtn");
 
-  // Show/hide the "Back to Top" button based on the user's scroll position
-  window.addEventListener("scroll", function() {
-    if (window.pageYOffset > 200) {
-      // If the user has scrolled down more than 300 pixels, show the button
-      backToTopBtn.style.display = "block";
-    } else {
-      // Otherwise, hide the button
-      backToTopBtn.style.display = "none";
-    }
-  });
+            // Show/hide the "Back to Top" button based on the user's scroll position
+            window.addEventListener("scroll", function () {
+                if (window.pageYOffset > 200) {
+                    // If the user has scrolled down more than 300 pixels, show the button
+                    backToTopBtn.style.display = "block";
+                } else {
+                    // Otherwise, hide the button
+                    backToTopBtn.style.display = "none";
+                }
+            });
 
-  // Scroll to the top of the page when the button is clicked
-  backToTopBtn.addEventListener("click", function() {
-    const startPosition = window.pageYOffset;
-    const distance = 0 - startPosition;
-    const duration = 10; // Adjust the duration (in milliseconds) as desired
+            // Scroll to the top of the page when the button is clicked
+            backToTopBtn.addEventListener("click", function () {
+                const startPosition = window.pageYOffset;
+                const distance = 0 - startPosition;
+                const duration = 10; // Adjust the duration (in milliseconds) as desired
 
-    const startTime = performance.now();
+                const startTime = performance.now();
 
-    function animation(currentTime) {
-      const timeElapsed = currentTime - startTime;
-      const progress = Math.min(timeElapsed / duration, 1);
-      const easing = easeInOutCubic(progress);
-      window.scrollTo(0, startPosition + distance * easing);
+                function animation(currentTime) {
+                    const timeElapsed = currentTime - startTime;
+                    const progress = Math.min(timeElapsed / duration, 1);
+                    const easing = easeInOutCubic(progress);
+                    window.scrollTo(0, startPosition + distance * easing);
 
-      if (timeElapsed < duration) {
-        requestAnimationFrame(animation);
-      }
-    }
+                    if (timeElapsed < duration) {
+                        requestAnimationFrame(animation);
+                    }
+                }
 
-    // Easing function for smooth scrolling
-    function easeInOutCubic(t) {
-      return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
-    }
+                // Easing function for smooth scrolling
+                function easeInOutCubic(t) {
+                    return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+                }
 
-    requestAnimationFrame(animation);
-  });
-});
+                requestAnimationFrame(animation);
+            });
+        });
     </script>
-    <button id="backToTopBtn" title="Back to Top"><img class="icon"
-        src="static\up_arrow.png" alt="GITHUB icon"></button>
+    <button id="backToTopBtn" title="Back to Top"><img class="icon" src="static\up_arrow.png"
+            alt="GITHUB icon"></button>
 
     <script src="script.js"></script>
     <div class="mainContent">
@@ -92,13 +92,21 @@
             <div class="col2">
                 <h1 class="frank">Hi,👋🏼<br /> I am <span>Manas Gupta</span><br />
                     <span class="text_span">HTML/CSS/Python/SQL</span><br />
-                    <a href="static\Manas_Resume_New.pdf" download target="_blank" class='button'><button
-                            class="resume">Download
-                            Resume</button></a>
-                    <a href="https://github.com/ManaasGupta" target="_blank" class='button'
-                        style="margin-left: 10px;"><button class="resume">Github</button></a>
-                    <a href="https://www.linkedin.com/in/manas-gupta-55878516a/" class='button' target="_blank"
-                        style="margin-left: 10px;"><button class="resume">LinkedIn</button></a>
+                    <div class="buttons">
+                        <div class="resume_button">
+                            <a href="static\Manas_Resume_New.pdf" download target="_blank" class='button'><button
+                                    class="resume">Download
+                                    Resume</button></a>
+                            <a href="https://www.linkedin.com/in/manas-gupta-55878516a/" class='button'
+                                target="_blank"><button class="resume">LinkedIn</button></a>
+                        </div>
+                        <div class="link_button">
+                            <a href="https://github.com/ManaasGupta" target="_blank" class='button'><button
+                                    class="resume">Github Page</button></a>
+                            <a href="static\Manas_Resume_New.pdf" target="_blank"><button class="resume">View
+                                    Resume</button></a>
+                        </div>
+                    </div>
                 </h1>
             </div>
         </main>

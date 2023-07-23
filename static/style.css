@@ -81,7 +81,6 @@ span {
   background-color: #000000;
   color: white;
   padding: 10px;
-  margin-top: 20px;
   border: #ffffff solid 2px;
   box-shadow: 0 9px whitesmoke;
   opacity: 0.8;
@@ -209,4 +208,20 @@ img:hover {
 }
 .dark-mode #backToTopBtn {
   background-color: #212124;
+}
+.buttons{
+  display: flex;
+  flex-direction: column;
+  gap:0.5em;
+  margin-top: 0.5em;
+}
+.resume_button{
+  display: flex;
+  flex-direction: row;
+  gap:0.3em;
+}
+.link_button{
+  display: flex;
+  flex-direction: row;
+  gap:0.3em;
 }
