@@ -23,6 +23,23 @@
                 element.classList.toggle("icon-dark");
             });
         }
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                } else {
+                    reveals[i].classList.remove("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
     </script>
 </head>
 
@@ -111,13 +128,14 @@
                 </h1>
             </div>
         </main>
+        <p class="text-center" style="font-size: 1.5em; color: rgba(240, 255, 255, 0.5);">&#42780; Scroll Down &#42780;</p>
     </div>
-    <div class="about lead" id="about"
+    <div class="about lead reveal" id="about"
         style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans';">
         <h1
             style="text-align: center; margin-top: 0.5em; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans';">
             About Me</h1>
-        <p class="text_format">As a recent graduate with a Master's degree in Bioinformatics, I am excited to apply my
+        <p class="text_format ">As a recent graduate with a Master's degree in Bioinformatics, I am excited to apply my
             knowledge and skills
             in a professional setting, particularly in the realm of software development. With a strong foundation in
             programming and data analysis, I possess proficiency in languages such as Python, R, and SQL. My experience
@@ -150,7 +168,7 @@
             complex scientific literature, and contribute to the scientific community. These research experiences have
             honed my analytical thinking and problem-solving skills, which are invaluable assets in the realm of
             software development.</p>
-        <p class="text_format">As I embark on my professional journey, I am particularly interested in pursuing software
+        <p class="text_format reveal">As I embark on my professional journey, I am particularly interested in pursuing software
             positions that will
             allow me to further develop my skills and gain hands-on experience in the software development field. I am
             confident that my diverse experiences and comprehensive skill set make me well-suited for software
@@ -158,18 +176,21 @@
             problem-solving, and a commitment to continuous learning and growth, I am prepared to make meaningful
             contributions to software development projects and drive innovation in the field.</p>
     </div>
-    <div class="project" id="projects">
+    <div class="project reveal" id="projects">
         <h1>Projects </h1>
         <div class="cards">
-            <div class="card poster" style="width: 18rem;">
-                <a href="{{url_for('user_login')}}"><img class="card-img-top login" src="static\login.png" alt="Card image cap"></a>
+            <div class="card poster text-center" style="width: 18rem;">
+                <a href="{{url_for('user_login')}}"><img class="card-img-top login" src="static\login.png"
+                        alt="Card image cap"></a>
                 <div class="card-body">
                     <h5 class="card-title">1. Credentials Authentication</h5>
-                    <p class="card-text">Credentials authentication is the process of verifying a user's identity using a combination of a unique identifier (e.g., username) and a secret shared value (e.g., password).</p>
-                    
+                    <p class="card-text">Credentials authentication is the process of verifying a user's identity using
+                        a combination of a unique identifier (e.g., username) and a secret shared value (e.g.,
+                        password).</p>
+
                 </div>
             </div>
-            <div class="card poster" style="width: 18rem;">
+            <div class="card poster text-center" style="width: 18rem;">
                 <img class="card-img-top" src="static\login.png" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
@@ -178,7 +199,7 @@
                     <a href="{{url_for('user_login')}}" class="btn btn-drak">Go somewhere</a>
                 </div>
             </div>
-            <div class="card poster" style="width: 18rem;">
+            <div class="card poster text-center" style="width: 18rem;">
                 <img class="card-img-top" src="static\login.png" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
@@ -189,7 +210,7 @@
             </div>
         </div>
     </div>
-    <div class="form h-100 contact-wrap p-5 contact text_format" id="contact">
+    <div class="form h-100 contact-wrap p-5 contact text_format reveal" id="contact">
         <h1 class="text-center">Let's Talk </h1>
         <form class="mb-5" id="contactForm" name="contactForm" method="POST">
             <div class="row">
