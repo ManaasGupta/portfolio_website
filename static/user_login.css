@@ -1,0 +1,56 @@
+.frank {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans';
+  }
+html,body{
+    display: flex;
+    /* justify-content: center; */
+    align-items:center ;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(300deg, #0cbaba 0%, #380036 74%);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.form{
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+    background-color: aqua;
+    color: aliceblue;
+}
+.icon{
+    width: 13%;
+    height: 25%;    
+    margin-bottom: 0px;
+    filter: invert(100%);
+    object-fit: cover;
+    margin-top: 0.3em;
+}
+.heading{
+    font-size: 3.2em;
+    font-family: Montserrat;
+    margin-top: 0.5em;
+    letter-spacing: 0.55em;
+    margin-left: 0.5em;
+    color: aliceblue;
+}
+form{
+    width: 50%;
+    padding: 2em;
+    color: azure;
+}
+button{
+    width: 20%;
+    border: none;
+    outline:none;
+    cursor: pointer;
+    padding: 1em;
+}
+.link{
+    text-decoration: none;
+}
+.red{
+    color: red;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='user_login.css') }}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <title>Signup and Login System with Flip Card</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+    <img src="static\user.png" class="icon" />
+    <h2 class="heading">User Registeration</h2>
+    <form>
+        <form class="mb-5" id="contactForm" name="contactForm" method="POST">
+            <div class="row">
+                <div class="col-md-6 form-group mb-3">
+                    <label for="first" class="col-form-label margin5px">First Name <span class='red'>* </span> </label>
+                    <input type="text" class="form-control" name="first" id="first" placeholder="Enter First Name" required>
+                </div>
+                <div class="col-md-6 form-group mb-3">
+                    <label for="last" class="col-form-label margin5px">Last Name <span class='red'>* </span> </label>
+                    <input required type="text" class="form-control" name="last" id="last" placeholder="Enter Last Name">
+                </div>
+            </div>
+        <div class="form-group">
+            <label for="user_email">Email address <span class='red'>* </span></label>
+            <input type="email" class="form-control" id="user_email" aria-describedby="emailHelp"
+                placeholder="Enter email" required>
+        </div>
+        <div class="form-group">
+            <label for="user_password">Password <span class='red'>* </span> </label>
+            <input type="password" class="form-control" id="user_password" placeholder=" Enter Password" required>
+        </div>
+        <div class="form-group">
+            <label for="confirm_password">Confirm Password <span class='red'>* </span> </label>
+            <input type="password" class="form-control" id="confirm_password" placeholder=" Confirm Password" required>
+            <small id="emailHelp" class="form-text">Already have account <a href="{{url_for('user_login')}}" class="link">Click here</a></small>
+        </div>
+        <button type="submit" class="btn btn-light submit">Sign Up</button>
+    </form>
+</body>
+
+</html>

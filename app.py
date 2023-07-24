@@ -98,8 +98,13 @@ def get_database():
                 return render_template("database.html",data=error)
     return render_template("database.html")
             
-    
+@app.route("/login")
+def user_login():
+    return render_template("user_login.html")
 
-            
+@app.route("/register")
+def user_register():
+    return render_template("register.html")
+
 if __name__ == '__main__':
     app.run(debug=True)
