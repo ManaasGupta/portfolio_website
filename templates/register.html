@@ -14,8 +14,7 @@
 <body>
     <img src="static\user.png" class="icon" />
     <h2 class="heading">User Registeration</h2>
-    <form>
-        <form class="mb-5" id="contactForm" name="contactForm" method="POST">
+        <form class="mb-5" id="contactForm" name="contactForm" method="POST" action="{{url_for('user_register')}}">
             <div class="row">
                 <div class="col-md-6 form-group mb-3">
                     <label for="first" class="col-form-label margin5px">First Name <span class='red'>* </span> </label>
@@ -28,20 +27,22 @@
             </div>
         <div class="form-group">
             <label for="user_email">Email address <span class='red'>* </span></label>
-            <input type="email" class="form-control" id="user_email" aria-describedby="emailHelp"
+            <input type="email" class="form-control" id="user_email" name="user_email" aria-describedby="emailHelp"
                 placeholder="Enter email" required>
         </div>
         <div class="form-group">
             <label for="user_password">Password <span class='red'>* </span> </label>
-            <input type="password" class="form-control" id="user_password" placeholder=" Enter Password" required>
+            <input type="password" class="form-control" id="user_password" name = "user_password" placeholder=" Enter Password" required>
+            <span class='red'>{{msg}}</span>
         </div>
         <div class="form-group">
             <label for="confirm_password">Confirm Password <span class='red'>* </span> </label>
-            <input type="password" class="form-control" id="confirm_password" placeholder=" Confirm Password" required>
-            <small id="emailHelp" class="form-text">Already have account <a href="{{url_for('user_login')}}" class="link">Click here</a></small>
+            <input type="password" class="form-control" id="confirm_password" name = "confirm_password" placeholder=" Confirm Password" required>
+            <small id="emailHelp" class="form-text">Already have an account <a href="{{url_for('user_login')}}" class="link">Sign In</a></small>
         </div>
         <button type="submit" class="btn btn-light submit">Sign Up</button>
     </form>
+    <a href="{{url_for('entry_point')}}" class="home">Return Home</a>
 </body>
 
 </html>

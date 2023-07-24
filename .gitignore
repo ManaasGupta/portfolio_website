@@ -1,3 +1,4 @@
 .venv
 bootstrap-5.3.0-examples
 .env
+password.py
