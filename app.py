@@ -98,9 +98,10 @@ def user_login():
         email = str(request.form.get('user_email'))
         user_password = str(request.form.get('user_password'))
         lh_engine = create_engine(connection_string, echo=True)
+        valid_user_string=os.getenv("VALID_USER_STRING")
         with lh_engine.connect() as conn:
             conn.execute(text("use query;"))
-            login_details = conn.execute(text("SELECT * FROM valid_users;"))
+            login_details = conn.execute(text(valid_user_string))
             login_details_dict = login_details.mappings().all()
 
             login_successful = False  # Boolean flag to track login success
