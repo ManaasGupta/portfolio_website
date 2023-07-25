@@ -197,24 +197,6 @@ img:hover {
   background-color: transparent;
   border: none;
 }
-#backToTopBtn {
-  display: none; /* Hide the button by default */
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  padding: 1.2em;
-  background-color: #ffffff;
-  border: none;
-  border-radius: 50em;
-  cursor: pointer;
-}
-#backToTopBtn:hover{
-  color: #000000 !important;
-  filter: invert(100%);
-}
-.dark-mode #backToTopBtn {
-  background-color: #212124;
-}
 .buttons{
   display: flex;
   flex-direction: column;
