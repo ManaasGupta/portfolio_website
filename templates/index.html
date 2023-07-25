@@ -44,57 +44,9 @@
 </head>
 
 <body id="body">
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // Previous JavaScript code (smooth scrolling) goes here
-
-            const backToTopBtn = document.getElementById("backToTopBtn");
-
-            // Show/hide the "Back to Top" button based on the user's scroll position
-            window.addEventListener("scroll", function () {
-                if (window.pageYOffset > 20) {
-                    // If the user has scrolled down more than 300 pixels, show the button
-                    backToTopBtn.style.display = "block";
-                } else {
-                    // Otherwise, hide the button
-                    backToTopBtn.style.display = "none";
-                }
-            });
-
-            // Scroll to the top of the page when the button is clicked
-            backToTopBtn.addEventListener("click", function () {
-                const startPosition = window.pageYOffset;
-                const distance = 0 - startPosition;
-                const duration = 10; // Adjust the duration (in milliseconds) as desired
-
-                const startTime = performance.now();
-
-                function animation(currentTime) {
-                    const timeElapsed = currentTime - startTime;
-                    const progress = Math.min(timeElapsed / duration, 1);
-                    const easing = easeInOutCubic(progress);
-                    window.scrollTo(0, startPosition + distance * easing);
-
-                    if (timeElapsed < duration) {
-                        requestAnimationFrame(animation);
-                    }
-                }
-
-                // Easing function for smooth scrolling
-                function easeInOutCubic(t) {
-                    return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
-                }
-
-                requestAnimationFrame(animation);
-            });
-        });
-    </script>
-    <button id="backToTopBtn" title="Back to Top"><img class="icon" src="static\up_arrow.png"
-            alt="GITHUB icon"></button>
-
     <script src="script.js"></script>
     <div class="mainContent">
-        <header class="frank bar" style="z-index: 100;">
+        <header style="z-index: 100;">
             <!-- <img src="static\logo.png" alt="LOGO" class="logo"> -->
             <a class="header" href="#body"> Home </a>
             <a class="header" href="#about"> About Me </a>
@@ -246,11 +198,6 @@
     <div class="container">
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
             <div class="col-md-4 d-flex align-items-center">
-                <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
-                    <svg class="bi" width="30" height="24">
-                        <use xlink:href="#bootstrap" />
-                    </svg>
-                </a>
                 <h5 class="mb-3 mb-md-0 ">&copy; 2023 Manas Gupta, Inc</h5>
             </div>
 

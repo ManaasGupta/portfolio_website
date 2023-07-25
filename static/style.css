@@ -109,6 +109,7 @@ span {
   margin: 2em 10em;
   background-color: ghostwhite;
   border-radius: 30px;
+  border: 1px solid black;
 }
 .margin5px {
   margin-left: 5px;
@@ -234,16 +235,19 @@ img:hover {
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans';
 }
 .project{
-  background-color: #b9d9eb85;
+  background-color: #ccccff92;
   border-radius: 4em;
   margin:0em 3em;
   padding-bottom: 2em;
+  border: 2px solid black;
+  outline: 2px solid black;
+  outline-offset:-1.5em;
 }
 .project > h1{
   text-align: center;
   margin:2em 0em;
   padding-top:1em;
-  padding-bottom: 0em;
+  padding: 0em;
 
 }
 .cards{
