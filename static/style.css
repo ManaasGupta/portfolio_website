@@ -99,9 +99,10 @@ span {
 .frank {
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans';
 }
-.about > p {
+.about > p,.about > h2 {
   font-size: 20px;
   margin: 0.5em 5em;
+  display: inline-block;
 }
 .contact {
   display: block;
