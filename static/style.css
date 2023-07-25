@@ -13,7 +13,6 @@ body > .mainContent{
 body > div > header {
   height: 5em;
   display: flex;
-  /* background: url("main.jpg"); */
   object-fit: cover;
 }
 /* .logo{
@@ -31,18 +30,7 @@ body > div > header {
   padding: 0.7em 1.4em;
   transition: 0.3s;
 }
-.header-scroll {
-  background-color: #ffffffce;
-  box-shadow: 0 3px 10px #000000;
-}
 .header:hover {
-  background-color: rgba(240, 248, 255, 0.36);
-  /* color: black; */
-  border-radius: 1.2em;
-  padding-left: 2em;
-  padding-right: 2em;
-}
-.header:active{
   opacity: 1;
   background-color: aliceblue;
   color: black;
@@ -113,7 +101,7 @@ span {
 }
 .about > p {
   font-size: 20px;
-  margin: 2em 5em;
+  margin: 0.5em 5em;
 }
 .contact {
   display: block;
@@ -245,12 +233,18 @@ img:hover {
 .text_format{
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans';
 }
-.projects{
-  display: flex;
+.project{
+  background-color: #b9d9eb85;
+  border-radius: 4em;
+  margin:0em 3em;
+  padding-bottom: 2em;
 }
 .project > h1{
   text-align: center;
-  margin:2em 0;
+  margin:2em 0em;
+  padding-top:1em;
+  padding-bottom: 0em;
+
 }
 .cards{
   display: flex;

@@ -52,7 +52,7 @@
 
             // Show/hide the "Back to Top" button based on the user's scroll position
             window.addEventListener("scroll", function () {
-                if (window.pageYOffset > 200) {
+                if (window.pageYOffset > 20) {
                     // If the user has scrolled down more than 300 pixels, show the button
                     backToTopBtn.style.display = "block";
                 } else {
@@ -130,7 +130,7 @@
         </main>
         <p class="text-center" style="font-size: 1.5em; color: rgba(240, 255, 255, 0.5);">&#42780; Scroll Down &#42780;</p>
     </div>
-    <div class="about lead reveal" id="about"
+    <div class="about reveal" id="about"
         style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans';">
         <h1
             style="text-align: center; margin-top: 0.5em; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans';">
@@ -177,35 +177,33 @@
             contributions to software development projects and drive innovation in the field.</p>
     </div>
     <div class="project reveal" id="projects">
-        <h1>Projects </h1>
-        <div class="cards">
-            <div class="card poster text-center" style="width: 18rem;">
+        <h1 style="color:black">Projects </h1>
+        <div class="cards" style="margin: 0em; padding: 0em;">
+            <div class="card poster text-center border-0 bg-transparent" style="width: 18rem;">
                 <a href="{{url_for('user_login')}}"><img class="card-img-top login" src="static\login.png"
                         alt="Card image cap"></a>
                 <div class="card-body">
-                    <h5 class="card-title">1. Credentials Authentication</h5>
-                    <p class="card-text">Credentials authentication is the process of verifying a user's identity using
+                    <h5 class="card-title text-dark">1. Credentials Authentication</h5>
+                    <p class="card-text text-dark">Credentials authentication is the process of verifying a user's identity using
                         a combination of a unique identifier (e.g., username) and a secret shared value (e.g.,
                         password).</p>
 
                 </div>
             </div>
-            <div class="card poster text-center" style="width: 18rem;">
+            <div class="card poster text-center border-0 bg-transparent" style="width: 18rem;">
                 <img class="card-img-top" src="static\login.png" alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    <h5 class="card-title text-dark">Card title</h5>
+                    <p class="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the
                         card's content.</p>
-                    <a href="{{url_for('user_login')}}" class="btn btn-drak">Go somewhere</a>
                 </div>
             </div>
-            <div class="card poster text-center" style="width: 18rem;">
+            <div class="card poster text-center border-0 bg-transparent" style="width: 18rem;">
                 <img class="card-img-top" src="static\login.png" alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    <h5 class="card-title text-dark">Card title</h5>
+                    <p class="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the
                         card's content.</p>
-                    <a href="{{url_for('user_login')}}" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
         </div>
