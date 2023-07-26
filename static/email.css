@@ -1,0 +1,19 @@
+html,body{
+    height: 100vh;
+}
+body{
+    display: flex;;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(315deg, #0cbaba 0%, #380036 74%);
+    color: azure;
+}
+h1{
+    font-size: 3em;
+    text-align:center ;
+}
+label{
+    font-size: 1.2em;
+}

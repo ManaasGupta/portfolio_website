@@ -6,10 +6,25 @@ from flask import Flask,render_template,request,url_for,redirect
 from datetime import date
 import calendar
 import logging
-
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 import hashlib
 app = Flask(__name__,template_folder='templates')
 
+def sendMail(toEmail,subject,message):
+    user=os.getenv('USER_EMAIL')
+    password=os.getenv('USER_APP_PASSWORD')
+    msg=MIMEMultipart()
+    msg.set_unixfrom("Manas Gupta")
+    msg['From']=user
+    msg['To']=toEmail
+    msg['Subject']=subject
+    msg.attach(MIMEText(message))
+    mailserver=smtplib.SMTP_SSL('smtp.gmail.com',465)
+    mailserver.login(user,password)
+    mailserver.sendmail(user,toEmail,msg.as_string())
+    mailserver.quit()
 
 lh_host=os.getenv("LOCAL_HOST")
 lh_password=os.getenv("LOCAL_PASSWORD")
@@ -163,5 +178,21 @@ def user_register():
             return render_template("register.html", msg=msg)
 
     return render_template("register.html")
+@app.route("/email",methods=['GET','POST'])
+def email():
+    if request.method=='POST':
+        try:
+            email = str(request.form.get('email'))
+            subject=str(request.form['subject'])
+            message=str(request.form['message'])
+            sendMail(email,subject,message)
+            msg="Email Sent Sucessfully"
+            return render_template("email.html",corr_msg=msg)
+        except Exception as e:
+                logging.error(f"Error occurred while sending email: {e}")
+                msg = "An error occurred while sending email. Please try again later."
+                return render_template("email.html",err_msg=msg)
+    
+    return render_template("email.html")
 if __name__ == '__main__':
     app.run(debug=True)
