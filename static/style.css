@@ -1,5 +1,6 @@
 html {
-  height: 100vh;
+  height:auto;
+  scroll-behavior: smooth;
 }
 body > .mainContent {
   background: url("main.jpg");
