@@ -7,7 +7,7 @@ body > .mainContent {
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
-  height: 100vh;
+  height: auto;
 }
 body > div > header {
   height: 5em;
@@ -68,8 +68,10 @@ main {
   object-fit: cover;
 }
 .col2 {
+  padding-bottom: 1.2em;
   display: flex;
   width: 65em;
+  height: auto;
   color: #ffffff;
   justify-content: center;
   align-items: center;
@@ -278,60 +280,6 @@ div > ul > li > a:hover {
   outline-offset: -10px;
 
 }
-@media screen and (max-width: 767px) {
-  /* Adjust styles for smaller screens */
-  body > .mainContent {
-    display: flex;
-    flex-direction: column;
-    background-attachment: scroll;
-  }
-  main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2em;
-  }
-  .col1 {
-    width: 90%;
-    margin-left: 0;
-  }
-  .col1 > a > img {
-    margin-left: 0;
-    max-width: 100%;
-  }
-  .col2 {
-    width: 90%;
-  }
-  .about > .content > p,
-  .about > .content > h2,
-  .about > p {
-    margin: 0.5em;
-    font-size: 12px;
-  }
-  .contact {
-    margin: 2em;
-  }
-  .project {
-    display: flex;
-    flex-direction: column;
-    margin: 0.5em;
-  }
-  .cards {
-    display: flex;
-    flex-direction: column;
-  }
-  .card-text {
-    font-size: 15px;
-  }
-  .card-img-top {
-    width: 5em;
-    height: 5em;
-  }
-  .icon {
-    width: 1.5em;
-    height: 1.5em;
-  }
-}
 @media screen and (max-width: 900px) {
   /* Adjust styles for smaller screens */
   body > .mainContent {
@@ -349,6 +297,7 @@ div > ul > li > a:hover {
     flex-direction: column;
     align-items: center;
     gap: 2em;
+    height: auto;
   }
   .col1 {
     width: 90%;
@@ -392,5 +341,8 @@ div > ul > li > a:hover {
   }
   .dis{
     display: none;
+  }
+  div > ul > li > a{
+    font-size: 14px !important;
   }
 }
