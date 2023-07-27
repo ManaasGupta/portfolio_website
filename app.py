@@ -2,7 +2,7 @@ from sqlalchemy import create_engine,text
 from dotenv import load_dotenv
 load_dotenv()
 import os
-from flask import Flask,render_template,request,url_for,redirect
+from flask import Flask,render_template,request,url_for,redirect,jsonify
 from datetime import date
 import calendar
 import logging
@@ -194,5 +194,17 @@ def email():
                 return render_template("email.html",err_msg=msg)
     
     return render_template("email.html")
+@app.route("/calc")
+def calc():
+    return render_template("calc.html")
+@app.route('/calculate', methods=['POST'])
+def calculate():
+    expression = request.form['expression']
+    try:
+        result = eval(expression)
+        return jsonify({'result': result})
+    except Exception as e:
+        return jsonify({'error': str(e)})
+
 if __name__ == '__main__':
     app.run(debug=True)

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+    <link rel="icon" href="static\logo.png">
+    <link href="{{ url_for('static', filename='calc.css') }}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <h1 class="text-center">Calculator </h1>
+    <div class="calculator">
+        <form id="calculator-form">
+            <input type="text" id="display" placeholder="0" disabled>
+            <div class="buttons">
+                <button type="button" class="operator" onclick="addToDisplay('**')">^</button>
+                <button type="button" class="operator" onclick="addToDisplay('/')">/</button>
+                <button type="button" class="operator" onclick="addToDisplay('*')">x</button>
+                <button type="button" class="operator" onclick="addToDisplay('-')">-</button>
+                <button type="button" class="number" onclick="addToDisplay('7')">7</button>
+                <button type="button" class="number" onclick="addToDisplay('8')">8</button>
+                <button type="button" class="number" onclick="addToDisplay('9')">9</button>
+                <button type="button" class="operator" onclick="addToDisplay('+')">+</button>
+                <button type="button" class="number" onclick="addToDisplay('4')">4</button>
+                <button type="button" class="number" onclick="addToDisplay('5')">5</button>
+                <button type="button" class="number" onclick="addToDisplay('6')">6</button>
+                <button type="button" class="operator" onclick="calculateResult()">=</button>
+                <button type="button" class="number" onclick="addToDisplay('1')">1</button>
+                <button type="button" class="number" onclick="addToDisplay('2')">2</button>
+                <button type="button" class="number" onclick="addToDisplay('3')">3</button>
+                <button type="button" class="operator" onclick="addToDisplay('.')">.</button>
+                <button type="button" class="number" onclick="addToDisplay('0')">0</button>
+                <button type="button" class="clear" onclick="clearDisplay()">C</button>
+            </div>
+        </form>
+    </div>
+    <a href="{{url_for('entry_point')}}" class="home">Return Home</a>
+    <script>
+        function addToDisplay(value) {
+            const display = document.getElementById('display');
+            display.value += value;
+        }
+
+        function calculateResult() {
+            const display = document.getElementById('display');
+            const expression = display.value;
+
+            fetch('/calculate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: `expression=${encodeURIComponent(expression)}`
+            })
+            .then(response => response.json())
+            .then(data => {
+                if ('error' in data) {
+                    alert(`Error: ${data.error}`);
+                } else {
+                    display.value = data.result;
+                }
+            })
+            .catch(error => console.error(error));
+        }
+
+        function clearDisplay() {
+            const display = document.getElementById('display');
+            display.value = '';
+        }
+    </script>
+</body>
+</html>
