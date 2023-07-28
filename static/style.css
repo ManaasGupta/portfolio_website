@@ -2,6 +2,9 @@ html {
   height:auto;
   scroll-behavior: smooth;
 }
+body{
+  scrollbar-color: #777777 #f1f1f1; /* Adjust colors for thumb and track */
+}
 body > .mainContent {
   background: url("main.jpg");
   background-size: cover;
@@ -280,6 +283,20 @@ div > ul > li > a:hover {
   border: 2px solid black;
   outline-offset: -10px;
 
+}
+body::-webkit-scrollbar {
+  width: 2px; /* Width of the scrollbar track */
+  height: 2px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color of the scrollbar track */
+  border-radius: 5px; /* Border radius of the scrollbar track */
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #777777; /* Color of the scrollbar thumb */
+  border-radius: 5px; /* Border radius of the scrollbar thumb */
 }
 @media screen and (max-width: 900px) {
   /* Adjust styles for smaller screens */

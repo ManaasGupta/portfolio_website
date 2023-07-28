@@ -24,21 +24,23 @@
                 <span style="padding-left: 3px;">Sign Out</span> </a>
         </div>
     </form>
-    <table> 
-        <tr>
-            {% for key in keys %}
-                <th>{{ key }}</th>
-            {% endfor %}
-        </tr>
-        {% for row in data %}
+    <div class="table-container">
+        <table>
             <tr>
                 {% for key in keys %}
-                    <td>{{ row[key] }}</td>
+                <th>{{ key }}</th>
                 {% endfor %}
             </tr>
-        {% endfor %}
+            {% for row in data %}
+            <tr>
+                {% for key in keys %}
+                <td>{{ row[key] }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
 
-    </table>
+        </table>
+    </div>
 </body>
 
 </html>

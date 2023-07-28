@@ -31,15 +31,18 @@ body {
   text-decoration: none;
   font-size: 18px;
 }
-.symbol{
-    font-size: 1.2em;
-    justify-content: center;
-    text-align: center;
+.symbol {
+  font-size: 1.2em;
+  justify-content: center;
+  text-align: center;
 }
 .contact {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  height: auto;
   gap: 4em;
-  margin: 5em 10em;
+  margin:5em 5em;
   background-color: rgba(248, 248, 255, 0.607);
   border-radius: 30px;
 }
@@ -66,4 +69,31 @@ body {
 .submit:active {
   box-shadow: 0 6px black;
   transform: translateY(3px);
+}
+@media only screen and (max-width: 900px) {
+  body {
+    padding-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .contact {
+    width: 90%;
+    display: flex;
+    max-height: 500px;
+  }
+
+  .home {
+    font-size: 14px;
+  }
+
+  .form-group {
+    margin-bottom: 1rem;
+  }
+
+  .submit {
+    font-size: 18px;
+    padding: 10px 15px;
+  }
 }
