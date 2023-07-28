@@ -110,6 +110,8 @@ body::-webkit-scrollbar-thumb {
   body {
     margin: 0;
     padding: 1em;
+    display: flex;
+    flex-direction: column;
   }
 
   table {
