@@ -106,7 +106,7 @@ body::-webkit-scrollbar-thumb {
   border-radius: 5px; /* Border radius of the scrollbar thumb */
 }
 /* Styles for screen sizes up to 900px (inclusive) */
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1000px) {
   body {
     max-width: 900px;
     max-height: 900px;
