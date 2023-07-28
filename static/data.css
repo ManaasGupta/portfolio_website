@@ -115,7 +115,12 @@ body::-webkit-scrollbar-thumb {
     display: flex;
     flex-direction: column;
   }
-
+form{
+  max-width: 900px;
+  max-height: 900px;
+  margin: 0;
+  padding: 1em;
+}
   table {
     margin: 1em 0;
     justify-content: flex-start;
