@@ -21,35 +21,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-    <script>
-        function darkMode() {
-            var element = document.body;
-            element.classList.toggle("dark-mode");
-            var ele = document.querySelector(".container")
-            ele.classList.toggle(".text");
-            var elements = document.querySelectorAll(".icon");
-            elements.forEach(function (element) {
-                element.classList.toggle("icon-dark");
-            });
-        }
-        function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 150;
-
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
-                } else {
-                    reveals[i].classList.remove("active");
-                }
-            }
-        }
-
-        window.addEventListener("scroll", reveal);
-    </script>
 </head>
 
 <body id="body">
@@ -72,7 +43,8 @@
                         <a class="nav-link text-white" class="scroll-link" href="#contact">Contact Me</a>
                     </li>
                     <li>
-                        <a class="nav-link text-white" onclick="darkMode()" style="cursor: pointer;">Dark Mode</a>
+                        <a class="nav-link text-white Dark" onclick="darkMode()" style="cursor: pointer;">Enable Dark
+                            Mode</a>
                     </li>
                 </ul>
         </nav>
@@ -302,6 +274,41 @@
             </ul>
         </footer>
     </div>
+    <script>
+        function darkMode() {
+            var element = document.body;
+            element.classList.toggle("dark-mode");
+            var darkModeButton = document.querySelector(".Dark")
+            if (darkModeButton.innerHTML == "Disable Dark Mode"){
+                darkModeButton.innerHTML = "Enable Dark Mode"
+            }else{
+                darkModeButton.innerHTML = "Disable Dark Mode";
+            }
+            var ele = document.querySelector(".container")
+            ele.classList.toggle(".text");
+            var elements = document.querySelectorAll(".icon");
+            elements.forEach(function (element) {
+                element.classList.toggle("icon-dark");
+            });
+        }
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                } else {
+                    reveals[i].classList.remove("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+    </script>
 </body>
 
 </html>
