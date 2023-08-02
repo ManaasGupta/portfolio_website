@@ -1,3 +1,23 @@
+body {
+  background-image: linear-gradient(315deg, #0cbaba 0%, #380036 74%);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  color: whitesmoke;
+  min-height: 100vh;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans";
+  display: flex;
+  height: auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.bt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 h1 {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans";
@@ -6,24 +26,6 @@ h1 {
   padding-top: 1em;
   padding-bottom: 1em;
   font-size: 2.5em;
-}
-body {
-  background-image: linear-gradient(315deg, #0cbaba 0%, #380036 74%);
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-position: center center;
-  color: whitesmoke;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans";
-  height: 100vh;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  flex-basis: 4em;
-  scrollbar-color: #777777 #f1f1f1; /* Adjust colors for thumb and track */
-  scrollbar-width: thin;
 }
 form {
   margin-bottom: 1em;
@@ -90,21 +92,6 @@ tr {
   background-color: aliceblue;
   text-decoration: none;
 }
-
-body::-webkit-scrollbar {
-  width: 2px; /* Width of the scrollbar track */
-  height: 2px;
-}
-
-body::-webkit-scrollbar-track {
-  background: #f1f1f1; /* Color of the scrollbar track */
-  border-radius: 5px; /* Border radius of the scrollbar track */
-}
-
-body::-webkit-scrollbar-thumb {
-  background: #777777; /* Color of the scrollbar thumb */
-  border-radius: 5px; /* Border radius of the scrollbar thumb */
-}
 /* Styles for screen sizes up to 900px (inclusive) */
 @media screen and (max-width: 1000px) {
   body {
@@ -115,22 +102,21 @@ body::-webkit-scrollbar-thumb {
     display: flex;
     flex-direction: column;
   }
-form{
-  max-width: 900px;
-  max-height: 900px;
-  margin: 0;
-  padding: 1em;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
+  form {
+    max-width: 900px;
+    max-height: 900px;
+    margin: 0;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
   table {
     display: flex;
     flex-direction: column;
     margin: 1em 0;
     justify-content: flex-start;
-    
   }
 
   table,
@@ -157,19 +143,5 @@ form{
     margin: 0 auto; /* Center the container on larger screens */
     scrollbar-color: #777777 #f1f1f1; /* Adjust colors for thumb and track */
     scrollbar-width: thin; /* Width of the scrollbar (thin, auto, etc.) */
-  }
-  /* WebKit-based browsers (Chrome, Safari) scrollbar customization */
-  .table-container::-webkit-scrollbar {
-    width: 2px; /* Width of the scrollbar track */
-  }
-
-  .table-container::-webkit-scrollbar-track {
-    background: #f1f1f1; /* Color of the scrollbar track */
-    border-radius: 5px; /* Border radius of the scrollbar track */
-  }
-
-  .table-container::-webkit-scrollbar-thumb {
-    background: #777777; /* Color of the scrollbar thumb */
-    border-radius: 5px; /* Border radius of the scrollbar thumb */
   }
 }
